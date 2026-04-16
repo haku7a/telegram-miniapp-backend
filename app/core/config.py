@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     DB_HOST: str
     DB_PORT: int
 
+    BOT_TOKEN: str
+
     @property
     def database_url(self) -> str:
         return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.POSTGRES_DB}"
